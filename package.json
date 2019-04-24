@@ -1,0 +1,22 @@
+{
+  "name": "medium-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jagajastic/medium-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jagajastic/medium-blog/issues"
+  },
+  "homepage": "https://github.com/jagajastic/medium-blog#readme",
+  "dependencies": {
+    "jest": "^24.7.1"
+  }
+}
