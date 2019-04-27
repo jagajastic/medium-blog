@@ -1,7 +1,8 @@
 let db = {
     users: [],
     admin: [],
-    post:[]
+    post:[],
+    comment: []
 }
 
 module.exports = db;
