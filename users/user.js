@@ -7,8 +7,8 @@ function User(name, email, password, type) {
     this.type = type;
 }
 
-function generateAutoIncrementalId() {
-    let id = db.users.length ? db.users[db.users.length - 1].id + 1 : 1;
+function generateAutoIncrementalId(type) {
+    let id = db[type].length ? db[type][db[type].length - 1].id + 1 : 1;
     return id;
 }
 
@@ -19,7 +19,7 @@ function checkUserExistance(email, password) {
 }
 
 function updateInformation(user_id) {
-    let userIndex = 0
+    let userIndex = 0;
     return typeof user_id === 'number' ?
         db.users.findIndex(eachObject => eachObject.id === user_id)
         : "Invalid credentals";
@@ -28,7 +28,7 @@ function updateInformation(user_id) {
 User.prototype = {
     constructor: User,
     createNewUser: function () {
-        let id = generateAutoIncrementalId();
+        let id = generateAutoIncrementalId('users');
         return (typeof this.type === 'string' && this.type === 'user') ?
             db.users.push({ id: id, name: this.name, email: this.email, password: this.password }) : 'Invalid credentials';
     },
@@ -53,12 +53,13 @@ User.prototype = {
 
 
 
-
+// console.log(generateAutoIncrementalId('users'));
 // let newUser = new User('joe', 'joe@gmail.com', 'passerby', 'user');
 // newUser.createNewUser();
+// console.log(generateAutoIncrementalId('users'));
 // console.log(db);
 // console.log(newUser.deleteUserAccount('je@gmail.com', 'passerby'));
 // console.log(db);
 // console.log('----------------');
 // console.log(newUser.loginUser('joe@gmail.com', 'passerby'));
-module.exports = { User, generateAutoIncrementalId };
+module.exports = { User, generateAutoIncrementalId, updateInformation, checkUserExistance, updateInformation };
