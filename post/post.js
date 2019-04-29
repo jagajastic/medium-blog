@@ -1,6 +1,7 @@
 
 const { generateAutoIncrementalId, checkUserExistance } = require('../users/user');
 const db = require('../db');
+const {User} = require('../users/user');
 
 
 
@@ -96,25 +97,4 @@ Post.methods = {
     },
 }
 
-// let newUser = new User('joe', 'joe@gmail.com', 'passerby', 'user');
-// newUser.createNewUser();
-// let newPerson = new User('joe', 'kolo@gmail.com', 'passerby', 'user');
-// newPerson.createNewUser();
-// let ja = new User('ja', 'ja@gmail.com', 'passerby', 'user');
-// ja.createNewUser();
-// console.log(Post.methods.createNewPost('joe@gmail.com', 'passerby', 'Goodnews: God is awesome!'));
-// console.log(Post.methods.createNewPost('joe@gmail.com', 'passerby', 'Goodnews: God is Jesus!'));
-// console.log(db.post);
-// console.log(Post.methods.createNewPost('ja@gmail.com', 'passerby', 'Goodnews: God is Jesus!'));
-// console.log(Post.methods.createNewPost('joe@gmail.com', 'passerby', 'Goodnews: God is Jesus!'));
-// console.log(Post.methods.commentPost('joe@gmail.com', 'passerby', 7, 'Yes, he is the Almighty God'));
-// console.log(Post.methods.clapForAPost('joe@gmail.com', 'passerby', 1));
-// console.log(Post.methods.clapForAPost('joe@gmail.com', 'passerby', 3));
-// console.log(Post.methods.readPostById('joe@gmail.com', 'passerby', 9));
-// console.log(Post.methods.readAllPost('joe@gmail.com', 'passerby'));
-// console.log(Post.methods.deletePostById('joe@gmail.com', 'passerby', 2));
-// console.log(Post.methods.deleteAllPost('joe@gmail.com', 'passerby'));
-// // console.log(db.users);
-// console.log(db.post);
-
-module.exports = Post;
+module.exports = Post.methods;
